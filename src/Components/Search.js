@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Navbar() {
+function Search() {
     return (
         <div>
-            <h1>NAvbar</h1>
+            <h1>Search</h1>
         </div>
     )
 }
 
-export default Navbar
+export default Search
