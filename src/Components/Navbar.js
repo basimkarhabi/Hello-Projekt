@@ -1,13 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Link} from 'react-router-dom' 
+import LoginPopup from './LoginPopup'
 
 
 function Navbar() {
+
+    const [loginPopupVisible,setLoginPopupVisible] = useState(false)
+
     return (
-        <div>
+        <div className="Navbar">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                  <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Logo</a>
+                    <a className="navbar-brand" href="#">Logo is her</a>
                         <button className="navbar-toggler" 
                             type="button"        
                             data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
@@ -34,6 +38,14 @@ function Navbar() {
                                 </li>
                                 <li className="nav-item">
                                 <Link to ="/kids" >Kids </Link>
+                                </li>
+                                <li>
+                                
+                                <button onClick = {()=>setLoginPopupVisible(!loginPopupVisible)}>
+                                {loginPopupVisible && <LoginPopup/>  }      
+                                        <Link to ="/login" >Login </Link>
+
+                                </button>
                                 </li>
                             </ul>
 

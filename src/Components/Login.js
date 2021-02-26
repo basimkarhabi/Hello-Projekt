@@ -1,9 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 function Login() {
+    const[user,setuser]=useState("basem")
+    const username={user}
+
     return (
         <div>
-            Login
+  
         </div>
     )
 }
