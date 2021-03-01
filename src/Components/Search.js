@@ -4,7 +4,13 @@ function Search() {
     
     return (
         <div>
-            <h1>Search</h1>
+            <h1>Search</h1>v
+            <form>
+                <label>serch</label>
+                    <input type="text"/>               
+            </form>
+
+
         </div>
     )
 }
