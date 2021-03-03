@@ -1,11 +1,15 @@
-import React from 'react'
+// Favorites.js
+import { useContext } from "react"
+import { MessengerPiggeon } from "./App"
 
-function Favorites() {
+export default function Favorites() {
+    const { user } = useContext(MessengerPiggeon)
+
     return (
-        <div>
-            <h1>Movies Favorites</h1>
-        </div>
+        <>
+            <ul>
+                {user.favorites.map(item => <li>{item}</li>)}
+            </ul>
+        </>
     )
 }
-
-export default Favorites

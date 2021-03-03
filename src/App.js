@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React ,{useState } from 'react';
 import './App.css';
 import {Route} from 'react-router-dom'
 import Navbar  from './Components/Navbar'
@@ -17,32 +17,46 @@ import LoginPopup from './Components/LoginPopup'
 import logo from './Components/logo.svg'
 
 function App() {
+  const [search, setSearch] = useState("");
+  const [movieRes, setmovieRes] = useState([]);
+    
 
 
-  return (
+  return ( 
 <div className="AppList">
-      <ul className = "Head navbar navbar-dark bg-primary ">
-        <img src="logo192.png"  width= "60" alt= "logo"/>
-          <Navbar />
-          <Route path="/home"     exact>  <Home />    </Route>
-          <Route path="/tvShows"  exact>  <TvShows /> </Route>
-          <Route path="/movies"   exact to = "/movies">  <Movies />  </Route>
-          <Route path="/explore"  exact>  <Explore /> </Route>
-          <Route path="/liveTv"   exact>  <LiveTv />  </Route>
-          <Route path="/kids"     exact>  <Kids />    </Route>
-          <Route path="/login"   >   <Login/>  </Route>
-      </ul>
+            <ul className = "Head navbar navbar-dark bg-primary ">
+                  <img src="logo192.png"  width= "60" alt= "logo"/>
+                  <Navbar />
+                  <Route path="/home"     exact>  <Home />    </Route>
+                  <Route path="/tvShows"  exact>  <TvShows /> </Route>
+                  <Route path="/movies"   exact>  <Movies />  </Route>
+                  <Route path="/explore"  exact>  <Explore /> </Route>
+                  <Route path="/liveTv"   exact>  <LiveTv />  </Route>
+                  <Route path="/kids"     exact>  <Kids />    </Route>
+                  <Route path="/login"   >   <Login/>  </Route>
+                  
+            </ul>
+            <div className="movieContainer">
+                  <Search 
+                  search  = {search}
+                  setSearch ={setSearch} 
+                  movieRes = {movieRes}
+                  setmovieRes = {setmovieRes}
+                  />
+                  <Movies
+                  movieRes={movieRes}
+                  />
+      </div>
 
-          <h1>Test the First APP</h1>
-          <Items/>
-          <Footer/>
-          <Vip />
-          <Search />
 
-      
 
+
+
+            <Vip />
+            <Items/>
+            <Footer/>
 </div>
-  );
+);
 }
 
 export default App;
