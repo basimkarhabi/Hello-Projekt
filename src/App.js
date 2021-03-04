@@ -19,14 +19,18 @@ import logo from './Components/logo.svg'
 function App() {
   const [search, setSearch] = useState("");
   const [movieRes, setmovieRes] = useState([]);
-    
 
 
   return ( 
 <div className="AppList">
-            <ul className = "Head navbar navbar-dark bg-primary ">
-                  <img src="logo192.png"  width= "60" alt= "logo"/>
-                  <Navbar />
+            <ul className = "Head navbar navbar-dark bg-" id= "ulNavbar">
+                  <img src="logo192.png"  width= "55" alt= "logo" id="img"/>
+                  <Navbar 
+                         search  = {search}
+                         setSearch ={setSearch} 
+                         movieRes = {movieRes}
+                        setmovieRes = {setmovieRes}
+                  />
                   <Route path="/home"     exact>  <Home />    </Route>
                   <Route path="/tvShows"  exact>  <TvShows /> </Route>
                   <Route path="/movies"   exact>  <Movies />  </Route>
@@ -37,21 +41,10 @@ function App() {
                   
             </ul>
             <div className="movieContainer">
-                  <Search 
-                  search  = {search}
-                  setSearch ={setSearch} 
-                  movieRes = {movieRes}
-                  setmovieRes = {setmovieRes}
-                  />
                   <Movies
                   movieRes={movieRes}
                   />
-      </div>
-
-
-
-
-
+            </div>
             <Vip />
             <Items/>
             <Footer/>

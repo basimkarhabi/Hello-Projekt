@@ -5,8 +5,8 @@ function LoginPopup() {
         <div className="LoginPopup"> 
             <h2>Log In</h2>
             <form>
-                <label>username:   </label>
-                    <input type="text"/>               
+                <label > Welcome  </label>
+                    <input type="text" placeholder= "username"/>               
             </form>
         </div>
     )

@@ -1,13 +1,16 @@
 import React from 'react'
 
-const Movies = ({movieRes}) => {
-<a className="nav-link" href="#">Movies</a>
+const Movies = ({movieRes,loading}) => {
 
 
 
 console.log(movieRes)
     return (
+<> 
+      
+
         <div className="movie">
+      {loading && <p className="loading-text">loading....</p>}      
             {movieRes.map(item =>
             <div className="movie-cards">
             <img src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} alt=""/>
@@ -20,6 +23,10 @@ console.log(movieRes)
             </div>
             )}
         </div>
+
+
+
+ </>
     )
 }
 
