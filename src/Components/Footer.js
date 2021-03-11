@@ -1,9 +1,16 @@
 import React from 'react'
 
-function Footer() {
+const Footer = ({ handleClose, show, children }) => {
+const showHideClassName = show ? "modal d-block" : "modal d-none";
+
     return (
-        <div>
-       
+        <div className ={showHideClassName}>
+            <div className="modal-container">
+        {children}
+        <a href="javascript:;" className="modal-close" onClick={handleClose}>
+          close
+        </a>
+      </div>
         </div>
     )
 }

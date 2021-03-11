@@ -7,49 +7,34 @@ import Footer from './Components/Footer'
 import  Login from './Components/Login'
 import  Vip from './Components/Vip'
 import  Search from './Components/Search'
-import Home from './Components/Home'
-import TvShows from './Components/TvShows'
-import Movies from './Components/Movies'
-import Explore from './Components/Explore'
-import LiveTv from './Components/LiveTv'
-import Kids from './Components/Kids'
 import LoginPopup from './Components/LoginPopup'
 import logo from './Components/logo.svg'
+import SearchResult from './Components/SearchReasult';
+
 
 function App() {
   const [search, setSearch] = useState("");
   const [movieRes, setmovieRes] = useState([]);
 
+ 
 
   return ( 
-<div className="AppList">
-            <ul className = "Head navbar navbar-dark bg-" id= "ulNavbar">
-                  <img src="logo192.png"  width= "55" alt= "logo" id="img"/>
+      <div className="AppList">
+                  <ul className = "Head navbar navbar-dark bg-" id= "ulNavbar">
+                        <img src="logo192.png"  width= "55" alt= "logo" id="img"/>
                   <Navbar 
-                         search  = {search}
-                         setSearch ={setSearch} 
-                         movieRes = {movieRes}
-                        setmovieRes = {setmovieRes}
-                  />
-                  <Route path="/home"     exact>  <Home />    </Route>
-                  <Route path="/tvShows"  exact>  <TvShows /> </Route>
-                  <Route path="/movies"   exact>  <Movies />  </Route>
-                  <Route path="/explore"  exact>  <Explore /> </Route>
-                  <Route path="/liveTv"   exact>  <LiveTv />  </Route>
-                  <Route path="/kids"     exact>  <Kids />    </Route>
-                  <Route path="/login"   >   <Login/>  </Route>
-                  
-            </ul>
-            <div className="movieContainer">
-                  <Movies
-                  movieRes={movieRes}
-                  />
-            </div>
-            <Vip />
-            <Items/>
-            <Footer/>
-</div>
-);
+                        search  = {search}
+                        setSearch ={setSearch} 
+                        movieRes = {movieRes}
+                        setmovieRes = {setmovieRes}/>
+
+                  <Route path="/login" >  <Login/>  </Route> 
+                  <Vip />
+                  </ul>
+                  <Items movieRes={movieRes} g />
+                  <Footer/>
+      </div>
+      );
 }
 
 export default App;

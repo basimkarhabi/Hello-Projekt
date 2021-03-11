@@ -8,7 +8,7 @@ function Navbar(props) {
    
     function handleLoginClick(){
         return(
-        setLoginPopupVisible(!loginPopupVisible)
+        setLoginPopupVisible(!loginPopupVisible) 
         )
     }
 
@@ -23,19 +23,21 @@ function Navbar(props) {
             <Link to ="/liveTv" className="item" >LiveTv </Link>
             <Link to ="/kids"   className="item" >Kids </Link>
         </ul>
-        <ul className= "list-right">
-            <Search className="Search"
-                    search  = {props.search}
-                    setSearch ={props.setSearch} 
-                    movieRes = {props.movieRes}
-                   setmovieRes = {props.setmovieRes}
-                  />
 
-            <button className = "button" 
-            onClick = {handleLoginClick}>
+        <ul className= "list-right">
+                <Search className="Search"
+                        search  = {props.search}
+                        setSearch ={props.setSearch} 
+                        movieRes = {props.movieRes}
+                    setmovieRes = {props.setmovieRes} />
+
+                <button className = "button" 
+                onClick = {handleLoginClick}>
+                <Link to ="/login" >Login </Link>
+                </button>
+
             {loginPopupVisible && <LoginPopup />}      
-            <Link to ="/login" >Login </Link>
-            </button>
+
         </ul>   
     </nav>
 </>
